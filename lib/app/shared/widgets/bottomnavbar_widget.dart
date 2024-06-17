@@ -1,22 +1,26 @@
 import 'package:flutter/material.dart';
+import 'package:maenbal/app/common/theme/font.dart';
+import 'package:maenbal/app/common/theme/theme.dart';
 
 class BottomNavBar extends StatelessWidget {
   final int currentIndex;
   final Function(int) onTap;
 
   const BottomNavBar({
-    Key? key,
+    super.key,
     required this.currentIndex,
     required this.onTap,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
+      selectedLabelStyle: semiBoldText14,
+      backgroundColor: Colors.white,
       type: BottomNavigationBarType.fixed,
       currentIndex: currentIndex,
       onTap: onTap,
-      selectedItemColor: Color(0xff54B9FC),
+      selectedItemColor: themeData.canvasColor,
       unselectedItemColor: Colors.grey,
       showSelectedLabels: true,
       showUnselectedLabels: true,
@@ -27,8 +31,9 @@ class BottomNavBar extends StatelessWidget {
             height: 24,
           ),
           activeIcon: Image.asset(
-            "assets/icons/home-active.png",
+            "assets/icons/home.png",
             height: 24,
+            color: themeData.canvasColor,
           ),
           label: 'Home',
         ),
@@ -38,8 +43,9 @@ class BottomNavBar extends StatelessWidget {
             height: 24,
           ),
           activeIcon: Image.asset(
-            "assets/icons/news-active.png",
+            "assets/icons/news.png",
             height: 24,
+            color: themeData.canvasColor,
           ),
           label: 'News',
         ),
@@ -49,8 +55,9 @@ class BottomNavBar extends StatelessWidget {
             height: 24,
           ),
           activeIcon: Image.asset(
-            "assets/icons/matches-active.png",
+            "assets/icons/matches.png",
             height: 24,
+            color: themeData.canvasColor,
           ),
           label: 'Matches',
         ),
@@ -60,8 +67,9 @@ class BottomNavBar extends StatelessWidget {
             height: 24,
           ),
           activeIcon: Image.asset(
-            "assets/icons/highlights-active.png",
+            "assets/icons/highlights.png",
             height: 24,
+            color: themeData.canvasColor,
           ),
           label: 'Highlights',
         ),
@@ -71,8 +79,9 @@ class BottomNavBar extends StatelessWidget {
             height: 24,
           ),
           activeIcon: Image.asset(
-            "assets/icons/profile-active.png",
+            "assets/icons/profile.png",
             height: 24,
+            color: themeData.canvasColor,
           ),
           label: 'Profile',
         ),

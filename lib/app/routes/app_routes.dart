@@ -9,6 +9,11 @@ abstract class Routes {
   static const MATCHES = _Paths.MATCHES;
   static const HIGHLIGHTS = _Paths.HIGHLIGHTS;
   static const PROFILE = _Paths.PROFILE;
+  static const SPLASH = _Paths.SPLASH;
+  static const LOGIN = _Paths.LOGIN;
+  static const REGISTER = _Paths.REGISTER;
+  static const PROFILE_EDIT = _Paths.PROFILE_EDIT;
+  static const NEWS_DETAIL = _Paths.NEWS_DETAIL;
 }
 
 abstract class _Paths {
@@ -19,4 +24,9 @@ abstract class _Paths {
   static const MATCHES = '/matches';
   static const HIGHLIGHTS = '/highlights';
   static const PROFILE = '/profile';
+  static const SPLASH = '/splash';
+  static const LOGIN = '/login';
+  static const REGISTER = '/register';
+  static const PROFILE_EDIT = '/profile-edit';
+  static const NEWS_DETAIL = '/news-detail';
 }
