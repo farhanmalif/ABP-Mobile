@@ -1,24 +1,37 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 import 'package:get/get.dart';
+import 'package:maenbal/app/common/styles/colors.dart';
+import 'package:maenbal/app/shared/widgets/appbar_widget.dart';
+import 'package:maenbal/app/shared/widgets/feed_player/feed_player.dart';
 
 import '../controllers/highlights_controller.dart';
 
 class HighlightsView extends GetView<HighlightsController> {
-  const HighlightsView({Key? key}) : super(key: key);
+  const HighlightsView({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('HighlightsView'),
-        centerTitle: true,
-      ),
-      body: const Center(
-        child: Text(
-          'HighlightsView is working',
-          style: TextStyle(fontSize: 20),
+      backgroundColor: kColorScheme.surface,
+      appBar: CustomAppBar(
+        title: 'Highlights',
+        isLeading: true,
+        leading: Padding(
+          padding: const EdgeInsets.only(left: 20),
+          child: Image.asset(
+            fit: BoxFit.fitWidth,
+            'assets/images/uefa.png',
+          ),
         ),
+        action: [
+          SvgPicture.asset(
+            'assets/images/notif.svg',
+          ),
+          const SizedBox(width: 20)
+        ],
       ),
+      body: const FeedPlayer(),
     );
   }
 }

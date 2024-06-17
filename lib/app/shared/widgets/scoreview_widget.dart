@@ -1,96 +1,210 @@
 import 'package:flutter/material.dart';
 import 'package:maenbal/app/common/theme/font.dart';
-import 'package:maenbal/app/shared/widgets/scorecard_widget.dart';
 
 class ScoreView extends StatelessWidget {
   ScoreView({super.key});
 
   final List<dynamic> TeamA = [
-    "assets/images/test123.png",
-    "assets/images/test123.png",
-    "assets/images/test123.png",
-    "assets/images/test123.png",
-    "assets/images/test123.png",
-    "assets/images/test123.png",
+    "assets/images/barcelona.png",
+    "assets/images/realmadrid.png",
+    "assets/images/acm.png",
+    "assets/images/psg.png",
+    "assets/images/manchester.png",
+    "assets/images/copenhagen.png",
   ];
 
   final List<dynamic> TeamB = [
-    "assets/images/test123.png",
-    "assets/images/test123.png",
-    "assets/images/test123.png",
-    "assets/images/test123.png",
-    "assets/images/test123.png",
-    "assets/images/test123.png",
+    "assets/images/psg.png",
+    "assets/images/sporting.png",
+    "assets/images/alnassr.png",
+    "assets/images/barcelona.png",
+    "assets/images/realmadrid.png",
+    "assets/images/munchen.png",
   ];
 
   final List<dynamic> Score = [
+    "3-2",
+    "2-1",
     "2-2",
-    "2-2",
-    "2-2",
-    "2-2",
-    "2-2",
-    "2-2",
+    "0-3",
+    "1-3",
+    "0-3",
   ];
 
   final List<dynamic> ScorerA = [
-    "De Jong 66’",
-    "De Jong 66’",
-    "De Jong 66’",
-    "De Jong 66’",
-    "De Jong 66’",
-    "De Jong 66’",
+    "Gavi 20’",
+    "Bellingham 15’",
+    "Leão 9’",
+    "",
+    "Antony 90’",
+    "",
+  ];
+
+  final List<dynamic> ScorerAA = [
+    "Lewandowski 66’",
+    "Rodrygo 88’",
+    "Giroud 15’",
+    "",
+    "",
+    "",
+  ];
+
+  final List<dynamic> ScorerAAA = [
+    "Lewandowski 89’",
+    "",
+    "",
+    "",
+    "",
+    "",
   ];
 
   final List<dynamic> ScorerB = [
-    "Alvarez 21’",
-    "Alvarez 21’",
-    "Alvarez 21’",
-    "Alvarez 21’",
-    "Alvarez 21’",
-    "Alvarez 21’",
+    "Mbappe 80’",
+    "Edwards 21’",
+    "C.Ronaldo 88’",
+    "Lewandowski 23’",
+    "V.Júnior 65’",
+    "Kane 21’",
+  ];
+
+  final List<dynamic> ScorerBB = [
+    "Mbappe 85’",
+    "",
+    "C.Ronaldo 90’",
+    "Lewandowski 25’",
+    "V.Júnior 71’",
+    "Müller 80’",
+  ];
+
+  final List<dynamic> ScorerBBB = [
+    "",
+    "",
+    "",
+    "Lewandowski 27’",
+    "V.Júnior 80’",
+    "Müller 90’",
+  ];
+
+  final List<dynamic> Time = [
+    "Full Time",
+    "Full Time",
+    "Full Time",
+    "Full Time",
+    "Full Time",
+    "Full Time",
   ];
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 27.0),
       child: Column(
         children: [
-          Row(
-            children: [
-              Text(
-                "Group phase",
-                style: semiBoldText12.copyWith(
-                  color: Color(0xff3498DB),
-                ),
-              ),
-              SizedBox(width: 10),
-              Icon(
-                Icons.circle,
-                size: 6,
-                color: Color(0xff3498DB),
-              ),
-              SizedBox(width: 10),
-              Text(
-                "Match 1 of 6",
-                style: semiBoldText12.copyWith(
-                  color: Color(0xff3498DB),
-                ),
-              ),
-              SizedBox(width: 10),
-              Icon(
-                Icons.chevron_right_outlined,
-                size: 20,
-                color: Color(0xff000000),
-              ),
-            ],
-          ),
           SingleChildScrollView(
             scrollDirection: Axis.horizontal,
             clipBehavior: Clip.none,
             child: Row(
               children: List.generate(Score.length, (index) {
-                return const ScoreCard();
+                return Container(
+                  margin: const EdgeInsets.fromLTRB(0, 14, 10, 14),
+                  padding: const EdgeInsets.all(12.0),
+                  width: 222.5,
+                  height: 140,
+                  decoration: BoxDecoration(
+                    gradient: const LinearGradient(
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+                      colors: <Color>[
+                        Color(0xff1F3198),
+                        Color(0xff182268),
+                      ],
+                    ),
+                    borderRadius: BorderRadius.circular(15.0),
+                  ),
+                  child: Column(
+                    children: [
+                      // Time
+                      Text(
+                        Time[index],
+                        style: mediumText10.copyWith(color: Colors.white),
+                      ),
+
+                      const SizedBox(height: 12),
+                      // Score
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          // Team A
+                          Image.asset(
+                            TeamA[index],
+                            height: 40,
+                          ),
+                          // Score
+                          Text(
+                            Score[index],
+                            style: semiBoldText24.copyWith(color: Colors.white),
+                          ),
+
+                          // Team B
+                          Image.asset(
+                            TeamB[index],
+                            height: 40,
+                          ),
+                        ],
+                      ),
+
+                      const SizedBox(height: 12),
+                      // Scorer
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          // Team A scorer
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                ScorerA[index],
+                                style:
+                                    mediumText8.copyWith(color: Colors.white),
+                              ),
+                              Text(
+                                ScorerAA[index],
+                                style:
+                                    mediumText8.copyWith(color: Colors.white),
+                              ),
+                              Text(
+                                ScorerAAA[index],
+                                style:
+                                    mediumText8.copyWith(color: Colors.white),
+                              ),
+                            ],
+                          ),
+
+                          // Team B scorer]
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.end,
+                            children: [
+                              Text(
+                                ScorerB[index],
+                                style:
+                                    mediumText8.copyWith(color: Colors.white),
+                              ),
+                              Text(
+                                ScorerBB[index],
+                                style:
+                                    mediumText8.copyWith(color: Colors.white),
+                              ),
+                              Text(
+                                ScorerBBB[index],
+                                style:
+                                    mediumText8.copyWith(color: Colors.white),
+                              ),
+                            ],
+                          )
+                        ],
+                      ),
+                    ],
+                  ),
+                );
               }),
             ),
           ),

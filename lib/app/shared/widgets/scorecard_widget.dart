@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:maenbal/app/common/theme/font.dart';
 
@@ -11,8 +9,8 @@ class ScoreCard extends StatelessWidget {
     return GestureDetector(
       onTap: () {},
       child: Container(
-        margin: EdgeInsets.fromLTRB(0, 14, 10, 14),
-        padding: EdgeInsets.all(12.0),
+        margin: const EdgeInsets.fromLTRB(0, 14, 10, 14),
+        padding: const EdgeInsets.all(12.0),
         width: 222.5,
         height: 140,
         decoration: BoxDecoration(
