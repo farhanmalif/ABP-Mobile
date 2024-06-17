@@ -35,7 +35,7 @@ class NewsDetailView extends GetView<NewsDetailController> {
             height: 300,
             decoration: const BoxDecoration(
               image: DecorationImage(
-                image: AssetImage("assets/images/picture1.png"),
+                image: AssetImage("assets/images/newsa3.png"),
                 fit: BoxFit.cover,
               ),
             ),
