@@ -21,7 +21,7 @@ class HighlightsView extends GetView<HighlightsController> {
           padding: const EdgeInsets.only(left: 20),
           child: Image.asset(
             fit: BoxFit.fitWidth,
-            'assets/images/uefa.png',
+            'assets/images/ucl.webp',
           ),
         ),
         action: [
@@ -31,7 +31,10 @@ class HighlightsView extends GetView<HighlightsController> {
           const SizedBox(width: 20)
         ],
       ),
-      body: const FeedPlayer(),
+      body: const Padding(
+        padding: EdgeInsets.symmetric(horizontal: 16.0),
+        child: FeedPlayer(),
+      ),
     );
   }
 }

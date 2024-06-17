@@ -6,7 +6,23 @@ import 'package:maenbal/app/common/theme/font.dart';
 // ignore: must_be_immutable
 class MatchCard extends StatelessWidget {
   bool isLinear;
-  MatchCard({this.isLinear = false, super.key});
+  String imageAClub;
+  String nameAClub;
+  String imageBClub;
+  String nameBClub;
+  String location;
+  String time;
+
+  MatchCard({
+    this.isLinear = false,
+    required this.imageAClub,
+    required this.nameAClub,
+    required this.imageBClub,
+    required this.nameBClub,
+    required this.location,
+    required this.time,
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -37,18 +53,32 @@ class MatchCard extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          _buildInfoClub(
-            isLinear: isLinear,
+          Expanded(
+            flex: 2,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                _buildInfoClub(
+                  isLinear: isLinear,
+                ),
+              ],
+            ),
           ),
-          _buildInformation(
-            icon: 'assets/images/location.svg',
-            title: 'Spain',
-            isLinear: isLinear,
+          Expanded(
+            flex: 1,
+            child: _buildInformation(
+              icon: 'assets/images/location.svg',
+              title: location,
+              isLinear: isLinear,
+            ),
           ),
-          _buildInformation(
-            icon: 'assets/images/clock.svg',
-            title: '5.00 PM',
-            isLinear: isLinear,
+          Expanded(
+            flex: 1,
+            child: _buildInformation(
+              icon: 'assets/images/clock.svg',
+              title: time,
+              isLinear: isLinear,
+            ),
           ),
         ],
       ),
@@ -59,16 +89,18 @@ class MatchCard extends StatelessWidget {
     return Row(
       children: [
         _buildClub(
-            imageClub: 'assets/images/realmadrid.png',
-            nameClub: 'Real Madrid',
-            isLinear: isLinear),
+          imageClub: imageAClub,
+          nameClub: nameAClub,
+          isLinear: isLinear,
+        ),
         const SizedBox(width: 10),
         _buildVersusText(isLinear: isLinear),
         const SizedBox(width: 10),
         _buildClub(
-            imageClub: 'assets/images/barcelona.png',
-            nameClub: 'Barcelona',
-            isLinear: isLinear),
+          imageClub: imageBClub,
+          nameClub: nameBClub,
+          isLinear: isLinear,
+        ),
       ],
     );
   }

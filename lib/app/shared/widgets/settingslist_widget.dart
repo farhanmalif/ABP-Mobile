@@ -66,8 +66,7 @@ class _SettingsListState extends State<SettingsList> {
               } else if (index == 1) {
                 toast("Notifications");
               } else if (index == 2) {
-                String url =
-                    'https://wordpress.iqonic.design/docs/product/prokit-flutter/';
+                String url = 'https://maenbal.up.railway.app/';
                 launch(url);
               } else if (index == 3) {
                 toast("Settings");
