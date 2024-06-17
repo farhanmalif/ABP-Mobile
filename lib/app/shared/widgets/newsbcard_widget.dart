@@ -6,21 +6,21 @@ class NewsBCard extends StatelessWidget {
   NewsBCard({super.key});
 
   final List<dynamic> newsTitle = [
-    "'We're here to enjoy it', says PSG boss Luis Enrique",
-    "'Aku ingin menguasai dunia', kata Darrel",
-    "'We're here to enjoy it', says PSG boss Luis Enrique",
+    "Lionel Messi: Man City best to watch but Real Madrid winners",
+    "What Mbappé's transfer to Real Madrid means for everyone",
+    "Ronaldo, Rivaldo: Vinícius Jr. already deserves Ballon d'Or",
   ];
 
   final List<dynamic> newsDate = [
-    "Full Time",
-    "Full Time",
-    "Full Time",
+    "Jun 7, 2024 - 08:59",
+    "Jun 3, 2024 - 01:57",
+    "Jun 7, 2024 - 02:38",
   ];
 
   final List<dynamic> newsPhoto = [
-    "assets/images/picture1.png",
-    "assets/images/profile.jpg",
-    "assets/images/picture1.png"
+    "assets/images/newsb1.jpeg",
+    "assets/images/newsb2.jpeg",
+    "assets/images/newsb3.jpeg"
   ];
 
   @override
@@ -32,7 +32,7 @@ class NewsBCard extends StatelessWidget {
           return Container(
             margin: const EdgeInsets.only(bottom: 8),
             width: double.infinity,
-            height: 112,
+            height: 200,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(15.0),
               image: DecorationImage(
@@ -56,7 +56,7 @@ class NewsBCard extends StatelessWidget {
                 children: [
                   Text(
                     newsTitle[index],
-                    style: boldText12.copyWith(color: themeData.highlightColor),
+                    style: boldText14.copyWith(color: themeData.highlightColor),
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -64,11 +64,11 @@ class NewsBCard extends StatelessWidget {
                       Text(
                         "UEFA Champions League",
                         style:
-                            boldText10.copyWith(color: themeData.primaryColor),
+                            boldText14.copyWith(color: themeData.primaryColor),
                       ),
                       Text(
-                        "30/04/2024 - 23:35",
-                        style: mediumText8.copyWith(
+                        newsDate[index],
+                        style: mediumText12.copyWith(
                             color: themeData.highlightColor),
                       )
                     ],

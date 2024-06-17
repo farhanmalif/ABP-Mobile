@@ -34,29 +34,44 @@ class _FeedPlayerState extends State<FeedPlayer> {
       },
       child: ListView.separated(
         separatorBuilder: (context, int) => Container(
-          height: 50,
+          height: 0,
         ),
         itemCount: items.length,
         itemBuilder: (context, index) {
-          return Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                items[index]['title'],
-                style: boldText16,
-              ),
-              Container(
-                  height: 200,
-                  margin: const EdgeInsets.all(2),
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(5),
-                    child: FlickMultiPlayer(
-                      url: items[index]['trailer_url'],
-                      flickMultiManager: flickMultiManager,
-                      image: items[index]['image'],
+          return Container(
+            padding: const EdgeInsets.only(top: 20),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
+                  children: [
+                    Image.asset(
+                      height: 40,
+                      'assets/images/ucl.webp',
                     ),
-                  )),
-            ],
+                    const SizedBox(width: 8),
+                    Flexible(
+                      child: Text(
+                        items[index]['title'],
+                        style: boldText16,
+                      ),
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 8),
+                Container(
+                    height: 400,
+                    margin: const EdgeInsets.all(2),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(5),
+                      child: FlickMultiPlayer(
+                        url: items[index]['trailer_url'],
+                        flickMultiManager: flickMultiManager,
+                        image: items[index]['image'],
+                      ),
+                    )),
+              ],
+            ),
           );
         },
       ),

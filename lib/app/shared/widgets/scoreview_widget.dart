@@ -5,7 +5,7 @@ class ScoreView extends StatelessWidget {
   ScoreView({super.key});
 
   final List<dynamic> TeamA = [
-    "assets/images/barcelona.png",
+    "assets/images/dortmund.png",
     "assets/images/realmadrid.png",
     "assets/images/acm.png",
     "assets/images/psg.png",
@@ -32,7 +32,7 @@ class ScoreView extends StatelessWidget {
   ];
 
   final List<dynamic> ScorerA = [
-    "Gavi 20’",
+    "Hummels 20’",
     "Bellingham 15’",
     "Leão 9’",
     "",
@@ -41,7 +41,7 @@ class ScoreView extends StatelessWidget {
   ];
 
   final List<dynamic> ScorerAA = [
-    "Lewandowski 66’",
+    "Reus 66’",
     "Rodrygo 88’",
     "Giroud 15’",
     "",
@@ -50,7 +50,7 @@ class ScoreView extends StatelessWidget {
   ];
 
   final List<dynamic> ScorerAAA = [
-    "Lewandowski 89’",
+    "Reus 89’",
     "",
     "",
     "",

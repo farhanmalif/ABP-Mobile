@@ -3,7 +3,7 @@ import 'package:flick_video_player/flick_video_player.dart';
 class FlickMultiManager {
   final List<FlickManager> _flickManagers = [];
   FlickManager? _activeManager;
-  bool _isMute = false;
+  bool _isMute = true;
 
   init(FlickManager flickManager) {
     _flickManagers.add(flickManager);

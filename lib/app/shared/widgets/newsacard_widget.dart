@@ -7,38 +7,44 @@ class NewsACard extends StatelessWidget {
   NewsACard({super.key});
 
   final List<dynamic> newsTitle = [
+    "Real Madrid were crowned champions of Europe for a 15th time",
     "Full round of 16 Champions League Draw",
-    "Full round of 16 Champions League Draw",
-    "Full round of 16 Champions League Draw",
+    "Everything you need to know about UCL new format",
+    "Which teams have qualified for the league phase?",
   ];
 
   final List<dynamic> newsPhoto = [
-    "assets/images/picture1.png",
-    "assets/images/profile.jpg",
-    "assets/images/picture1.png"
+    "assets/images/newsa1.jpg",
+    "assets/images/newsa3.png",
+    "assets/images/newsa2.jpg",
+    "assets/images/newsa4.jpg",
   ];
   final List<dynamic> newsPosted = [
     "1 days ago",
     "2 days ago",
     "3 days ago",
+    "4 days ago",
   ];
 
   final List<dynamic> newsViews = [
     " 123 k",
     " 10 k",
     " 9 k",
+    " 20 k",
   ];
 
   final List<dynamic> newsComments = [
     " 3",
     " 20",
     " 5",
+    " 35",
   ];
 
   final List<dynamic> newsLikes = [
     " 50",
     " 120",
     " 12",
+    " 72",
   ];
 
   @override
@@ -53,7 +59,7 @@ class NewsACard extends StatelessWidget {
                 context,
                 MaterialPageRoute(
                   builder: (context) {
-                    return NewsDetailView();
+                    return const NewsDetailView();
                   },
                 ),
               );
@@ -84,7 +90,7 @@ class NewsACard extends StatelessWidget {
                         topRight: Radius.circular(15),
                       ),
                       image: DecorationImage(
-                        fit: BoxFit.fill,
+                        fit: BoxFit.cover,
                         image: AssetImage(newsPhoto[index]),
                       ),
                     ),
