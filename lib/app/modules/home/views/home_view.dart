@@ -6,7 +6,6 @@ import 'package:maenbal/app/common/styles/colors.dart';
 import 'package:maenbal/app/common/theme/font.dart';
 import 'package:maenbal/app/shared/widgets/appbar_widget.dart';
 import 'package:maenbal/app/shared/widgets/matchcard_widget.dart';
-import 'package:maenbal/app/shared/widgets/newsacard_widget.dart';
 import 'package:maenbal/app/shared/widgets/newsbcard_widget.dart';
 import 'package:maenbal/app/shared/widgets/scoreview_widget.dart';
 import 'package:maenbal/app/shared/widgets/standingscat_widget.dart';
